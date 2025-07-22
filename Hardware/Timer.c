@@ -1,56 +1,57 @@
 #include "stm32f10x.h"                  // Device header
 
 /**
-  * º¯    Êý£º¶¨Ê±ÖÐ¶Ï³õÊ¼»¯
-  * ²Î    Êý£ºÎÞ
-  * ·µ »Ø Öµ£ºÎÞ
+  * ï¿½ï¿½    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ð¶Ï³ï¿½Ê¼ï¿½ï¿½
+  * ï¿½ï¿½    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  * ï¿½ï¿½ ï¿½ï¿½ Öµï¿½ï¿½ï¿½ï¿½
   */
 void Timer_Init(void)
 {
-	/*¿ªÆôÊ±ÖÓ*/
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);			//¿ªÆôTIM2µÄÊ±ÖÓ
+	/*ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½*/
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);			//ï¿½ï¿½ï¿½ï¿½TIM2ï¿½ï¿½Ê±ï¿½ï¿½
 	
-	/*ÅäÖÃÊ±ÖÓÔ´*/
-	TIM_InternalClockConfig(TIM4);		//Ñ¡ÔñTIM2ÎªÄÚ²¿Ê±ÖÓ£¬Èô²»µ÷ÓÃ´Ëº¯Êý£¬TIMÄ¬ÈÏÒ²ÎªÄÚ²¿Ê±ÖÓ
+	/*ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ô´*/
+	TIM_InternalClockConfig(TIM4);		//Ñ¡ï¿½ï¿½TIM2Îªï¿½Ú²ï¿½Ê±ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´Ëºï¿½ï¿½ï¿½ï¿½ï¿½TIMÄ¬ï¿½ï¿½Ò²Îªï¿½Ú²ï¿½Ê±ï¿½ï¿½
 	
-	/*Ê±»ùµ¥Ôª³õÊ¼»¯*/
-	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;				//¶¨Òå½á¹¹Ìå±äÁ¿
-	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;		//Ê±ÖÓ·ÖÆµ£¬Ñ¡Ôñ²»·ÖÆµ£¬´Ë²ÎÊýÓÃÓÚÅäÖÃÂË²¨Æ÷Ê±ÖÓ£¬²»Ó°ÏìÊ±»ùµ¥Ôª¹¦ÄÜ
-	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;	//¼ÆÊýÆ÷Ä£Ê½£¬Ñ¡ÔñÏòÉÏ¼ÆÊý
-	TIM_TimeBaseInitStructure.TIM_Period = 100- 1;				//¼ÆÊýÖÜÆÚ£¬¼´ARRµÄÖµ
-	TIM_TimeBaseInitStructure.TIM_Prescaler = 7200 - 1;				//Ô¤·ÖÆµÆ÷£¬¼´PSCµÄÖµ
-	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;			//ÖØ¸´¼ÆÊýÆ÷£¬¸ß¼¶¶¨Ê±Æ÷²Å»áÓÃµ½
-	TIM_TimeBaseInit(TIM4, &TIM_TimeBaseInitStructure);				//½«½á¹¹Ìå±äÁ¿½»¸øTIM_TimeBaseInit£¬ÅäÖÃTIM2µÄÊ±»ùµ¥Ôª	
+	/*Ê±ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½Ê¼ï¿½ï¿½*/
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;				//ï¿½ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½ï¿½ï¿½ï¿½
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;		//Ê±ï¿½Ó·ï¿½Æµï¿½ï¿½Ñ¡ï¿½ñ²»·ï¿½Æµï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½Ê±ï¿½Ó£ï¿½ï¿½ï¿½Ó°ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½
+	TIM_TimeBaseInitStructure.TIM_Period = 100- 1;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ARRï¿½ï¿½Öµ
+	TIM_TimeBaseInitStructure.TIM_Prescaler = 7200 - 1;				//Ô¤ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PSCï¿½ï¿½Öµ
+	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;			//ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Å»ï¿½ï¿½Ãµï¿½
+	TIM_TimeBaseInit(TIM4, &TIM_TimeBaseInitStructure);				//ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½TIM_TimeBaseInitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½TIM2ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ôª	
 	
-	/*ÖÐ¶ÏÊä³öÅäÖÃ*/
-	TIM_ClearFlag(TIM4, TIM_FLAG_Update);						//Çå³ý¶¨Ê±Æ÷¸üÐÂ±êÖ¾Î»
-																//TIM_TimeBaseInitº¯ÊýÄ©Î²£¬ÊÖ¶¯²úÉúÁË¸üÐÂÊÂ¼þ
-																//Èô²»Çå³ý´Ë±êÖ¾Î»£¬Ôò¿ªÆôÖÐ¶Ïºó£¬»áÁ¢¿Ì½øÈëÒ»´ÎÖÐ¶Ï
-																//Èç¹û²»½éÒâ´ËÎÊÌâ£¬Ôò²»Çå³ý´Ë±êÖ¾Î»Ò²¿É
+	/*ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
+	TIM_ClearFlag(TIM4, TIM_FLAG_Update);						//ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½Ö¾Î»
+																//TIM_TimeBaseInitï¿½ï¿½ï¿½ï¿½Ä©Î²ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
+																//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë±ï¿½Ö¾Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ïºó£¬»ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ð¶ï¿½
+																//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë±ï¿½Ö¾Î»Ò²ï¿½ï¿½
 	
-	TIM_ITConfig(TIM4, TIM_IT_Update, ENABLE);					//¿ªÆôTIM2µÄ¸üÐÂÖÐ¶Ï
+	TIM_ITConfig(TIM4, TIM_IT_Update, ENABLE);					//ï¿½ï¿½ï¿½ï¿½TIM2ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	
-	/*NVICÖÐ¶Ï·Ö×é*/
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);				//ÅäÖÃNVICÎª·Ö×é2
-																//¼´ÇÀÕ¼ÓÅÏÈ¼¶·¶Î§£º0~3£¬ÏìÓ¦ÓÅÏÈ¼¶·¶Î§£º0~3
-																//´Ë·Ö×éÅäÖÃÔÚÕû¸ö¹¤³ÌÖÐ½öÐèµ÷ÓÃÒ»´Î
-																//ÈôÓÐ¶à¸öÖÐ¶Ï£¬¿ÉÒÔ°Ñ´Ë´úÂë·ÅÔÚmainº¯ÊýÄÚ£¬whileÑ­»·Ö®Ç°
-																//Èôµ÷ÓÃ¶à´ÎÅäÖÃ·Ö×éµÄ´úÂë£¬ÔòºóÖ´ÐÐµÄÅäÖÃ»á¸²¸ÇÏÈÖ´ÐÐµÄÅäÖÃ
+	/*NVICï¿½Ð¶Ï·ï¿½ï¿½ï¿½*/
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);				//ï¿½ï¿½ï¿½ï¿½NVICÎªï¿½ï¿½ï¿½ï¿½2
+																//ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½Î§ï¿½ï¿½0~3ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½Î§ï¿½ï¿½0~3
+																//ï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+																//ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½Ô°Ñ´Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mainï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½whileÑ­ï¿½ï¿½Ö®Ç°
+																//ï¿½ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ã»á¸²ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	/*NVICÅäÖÃ*/
-	NVIC_InitTypeDef NVIC_InitStructure;						//¶¨Òå½á¹¹Ìå±äÁ¿
-	NVIC_InitStructure.NVIC_IRQChannel = TIM4_IRQn;				//Ñ¡ÔñÅäÖÃNVICµÄTIM2Ïß
-	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;				//Ö¸¶¨NVICÏßÂ·Ê¹ÄÜ
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;	//Ö¸¶¨NVICÏßÂ·µÄÇÀÕ¼ÓÅÏÈ¼¶Îª2
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;			//Ö¸¶¨NVICÏßÂ·µÄÏìÓ¦ÓÅÏÈ¼¶Îª1
-	NVIC_Init(&NVIC_InitStructure);								//½«½á¹¹Ìå±äÁ¿½»¸øNVIC_Init£¬ÅäÖÃNVICÍâÉè
+	/*NVICï¿½ï¿½ï¿½ï¿½*/
+	NVIC_InitTypeDef NVIC_InitStructure;						//ï¿½ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½ï¿½ï¿½ï¿½
+	NVIC_InitStructure.NVIC_IRQChannel = TIM4_IRQn;				//Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NVICï¿½ï¿½TIM2ï¿½ï¿½
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;				//Ö¸ï¿½ï¿½NVICï¿½ï¿½Â·Ê¹ï¿½ï¿½
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;	//Ö¸ï¿½ï¿½NVICï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½È¼ï¿½Îª2
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;			//Ö¸ï¿½ï¿½NVICï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½È¼ï¿½Îª1
+	NVIC_Init(&NVIC_InitStructure);								//ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NVIC_Initï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NVICï¿½ï¿½ï¿½ï¿½
 	
-	/*TIMÊ¹ÄÜ*/
-	TIM_Cmd(TIM4, ENABLE);			//Ê¹ÄÜTIM2£¬¶¨Ê±Æ÷¿ªÊ¼ÔËÐÐ
+	
+	/*TIMÊ¹ï¿½ï¿½*/
+	TIM_Cmd(TIM4, ENABLE);			//Ê¹ï¿½ï¿½TIM2ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
 	
 }
 
-/* ¶¨Ê±Æ÷ÖÐ¶Ïº¯Êý£¬¿ÉÒÔ¸´ÖÆµ½Ê¹ÓÃËüµÄµØ·½
+/* ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ð¶Ïºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½Æµï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ÄµØ·ï¿½
 void TIM2_IRQHandler(void)
 {
 	if (TIM_GetITStatus(TIM2, TIM_IT_Update) == SET)

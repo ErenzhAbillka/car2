@@ -73,10 +73,15 @@ void read_sensors(int*read_senors)
 	read_senors[6]=GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_13);
 	read_senors[7]=GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_14);
 
-	// 将8个传感器状态按位组合成一个整数，方便状态判断和显示
-	Trackn = read_senors[0] * 128 +read_senors[1]*64+ read_senors[2]*32 + 
-		read_senors[3]*16+read_senors[4]*8+ read_senors[5]*4+ 
-		read_senors[6]*2+ read_senors[7]*1;
+	// 初始 1111 1111
+	Trackn = read_senors[0] * 128 +
+             read_senors[1] * 64 + 
+             read_senors[2] * 32 + 
+		     read_senors[3] * 16 +
+             read_senors[4] * 8 +
+             read_senors[5] * 4 + 
+		     read_senors[6] * 2 + 
+             read_senors[7] * 1;
 }
 
 // GPIO端口和引脚映射数组，方便循环读取
