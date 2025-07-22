@@ -1,7 +1,7 @@
 .\objects\xunji.o: Hardware\xunji.c
 .\objects\xunji.o: .\Start\stm32f10x.h
 .\objects\xunji.o: .\Start\core_cm3.h
-.\objects\xunji.o: G:\Keil_32\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\xunji.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\xunji.o: .\Start\system_stm32f10x.h
 .\objects\xunji.o: .\User\stm32f10x_conf.h
 .\objects\xunji.o: .\Library\stm32f10x_adc.h

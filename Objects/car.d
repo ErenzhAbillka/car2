@@ -1,7 +1,7 @@
 .\objects\car.o: Hardware\car.c
 .\objects\car.o: .\Start\stm32f10x.h
 .\objects\car.o: .\Start\core_cm3.h
-.\objects\car.o: G:\Keil_32\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\car.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\car.o: .\Start\system_stm32f10x.h
 .\objects\car.o: .\User\stm32f10x_conf.h
 .\objects\car.o: .\Library\stm32f10x_adc.h

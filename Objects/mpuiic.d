@@ -3,7 +3,7 @@
 .\objects\mpuiic.o: .\System\sys.h
 .\objects\mpuiic.o: .\Start\stm32f10x.h
 .\objects\mpuiic.o: .\Start\core_cm3.h
-.\objects\mpuiic.o: G:\Keil_32\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mpuiic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\mpuiic.o: .\Start\system_stm32f10x.h
 .\objects\mpuiic.o: .\User\stm32f10x_conf.h
 .\objects\mpuiic.o: .\Library\stm32f10x_adc.h
